@@ -1,14 +1,17 @@
 - title: "Retail Sales Prediction"
   description: "Developed a machine learning model to predict future sales for a major retail chain."
+  category: "Data Science"
   image: project-1.png
   link: "#"
 
 - title: "Customer Churn Analysis"
   description: "Created an interactive dashboard to analyze and predict customer churn for a telecom company."
+  category: "Data Science"
   image: project-2.png
   link: "#"
 
 - title: "Customer Churn Analysis"
   description: "Created an interactive dashboard to analyze and predict customer churn for a telecom company."
+  category: "Data Science"
   image: project-3.png
   link: "#"
