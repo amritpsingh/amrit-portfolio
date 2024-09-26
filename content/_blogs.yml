@@ -1,0 +1,17 @@
+- title: "Introduction to Data Analytics"
+  file: blog1.md
+  date: 2024-03-15
+  excerpt: "Learn the basics of data analytics and its importance in modern business."
+  image: data-analyst-skills.svg
+
+- title: "Advanced Machine Learning Techniques"
+  file: blog2.md
+  date: 2024-03-20
+  excerpt: "Explore cutting-edge machine learning techniques for predictive modeling."
+  image: data-analyst-skills.svg
+
+- title: "Machine Learning: A Beginner's Guide"
+  file: blog3.md
+  date: 2024-03-20
+  excerpt: Demystifying machine learning concepts for beginners..."
+  image: data-analyst-skills.svg

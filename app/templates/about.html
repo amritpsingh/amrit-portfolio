@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <img src="{{ request.url_for('static', path='/images/about-image.jpg') }}" alt="About" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                <p class="mb-4">
+                    Hello! My name is [Your Name], and I'm a [Your Profession] based in [Your Location]. I have [X] years of experience in the field, and I'm passionate about [Your Passion].
+                </p>
+                <p class="mb-4">
+                    In my work, I focus on [Your Focus Area 1], [Your Focus Area 2], and [Your Focus Area 3]. I strive to deliver high-quality results and provide exceptional customer service.
+                </p>
+                <p class="mb-4">
+                    Feel free to explore my portfolio and learn more about the projects I've worked on. If you have any questions or would like to discuss a potential collaboration, please don't hesitate to reach out.
+                </p>
+                <a href="{{ request.url_for('contact') }}" class="btn btn-primary" hx-get="{{ request.url_for('contact') }}" hx-target="#content">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

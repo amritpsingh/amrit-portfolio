@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Amrit's Portfolio{% endblock %}
+
+{% block head %}
+<style>
+    .services-background {
+        background-image: url('{{ services_bg_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!--Home Section-->
+<section id="home" class="home-section bg-cream">
+    <div class="container">
+        <div class="anim-elements">
+            <div class="anim-element"><i class='bx bxl-python'></i></div>
+            <div class="anim-element"><i class='bx bxl-postgresql' ></i></div>
+            <div class="anim-element"><i class='bx bx-bar-chart-square' ></i></div>
+            <div class="anim-element"><i class='bx bxl-docker'></i></div>
+            <div class="anim-element"><i class='bx bxl-github'></i></div>
+            <div class="anim-element"><i class='bx bxl-aws'></i></div>
+            <div class="anim-element"><i class='bx bxl-visual-studio'></i></div>
+        </div>
+        <div class="row gy-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="home-intro text-center text-lg-start">
+                    <h2 class="mb-3">Unlock the Power of Data with Expert Analytics Consulting</h2>
+                    <p class="lead mb-4">Transform your business with data-driven insights, tailored analytics solutions, and predictive models that fuel success.</p>
+                    <h6 class="mb-4">Hi, I'm <span class="text-primary">Amrit Pal Singh</span>, A Seasoned <span id="type-it"></span></h6>
+                    <p>With over 9 years of experience, I specialize in helping businesses make data-driven decisions that lead to measurable growth.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://www.linkedin.com/in/amritps28/" target="_blank" class="me-3">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://x.com/amritps28" target="_blank" class="me-3">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="https://github.com/amritpsingh" target="_blank">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </div>
+                    <a href="#contact" class="colored-btn mt-4">Let's Work Together</a>
+                </div>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                <div class="home-image text-center">
+                    <img src="{{ request.url_for('static', path='/images/profile-pic.png') }}" alt="Amrit Pal Singh - Data Analytics Consultant">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="row gya-5 align-items-center">
+            <div class="col-lg-5 text-center">
+                <img src="{{ request.url_for('static', path='/images/data-analyst.svg') }}" alt="Data Analytics Illustration">
+            </div>
+            <div class="col-lg-7 ps-lg-5">
+                <div >  <!--class="about-text"-->
+                    <h2 class="mb-4">About Amrit Pal Singh: Your Trusted Data Analytics Partner</h2>
+                    <p>I'm Amrit Pal Singh, a Seasoned Data Consultant, dedicated to turning complex data into strategic insights. With a background in business intelligence, machine learning, and AI application development, I've worked with companies across <strong>Retail, IT, Education and Financial Services</strong> industries to enhance their decision-making with data-driven insights.</p>
+                    <p>What sets me apart is my dedication to delivering cutting-edge analytics solutions while empowering clients to leverage their data effectively. I collaborate closely with businesses to turn data into a true competitive advantage, from developing <strong>ETL pipelines</strong> to creating <strong>interactive dashboards</strong> and <strong>predictive models</strong> using a blend of open-source tools, proprietary software, and cloud platforms.</p>
+                    <p>I’m passionate about helping businesses thrive in an increasingly data-driven world. Whether you need <strong>real-time analytics</strong>, <strong>machine learning models</strong>, or a complete <strong>data strategy</strong>, I’m here to guide you every step of the way.</p>
+                    <div class="row pt-2">
+                        <div class="col-6 col-md-4">
+                            <h5 class="text-primary fw-semibold fs-4 mb-0">20+</h5>
+                            <span class="text-dark">Projects Completed</span>
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <h5 class="text-primary fw-semibold fs-4 mb-0">8+</h5>
+                            <span class="text-dark">Happy Clients</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="colored-btn mt-3">Let's talk about your next project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+<!-- Services Section -->
+<section id="services" class="section bg-cream"> <!--bg-gray services-background-->
+    <div class="container">
+        <!-- <div class="section-heading">
+            <h3>My Services</h3>
+        </div> -->
+        <h2 class="text-center mb-5">Data Analytics Services Tailored to Your Business</h2>
+        <div class="row gy-4">
+            {% for service in services %}
+            <div class="col-md-6">
+                <div class="feature-box bg-{{ loop.index }}">
+                    <div class="icon"><i class='{{ service.icon }}'></i></div>
+                    <div class="content">
+                        <h5>{{ service.name }}</h5>
+                        <p>{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="#contact" class="colored-btn">Get in touch to explore how I can help</a>
+        </div>
+    </div>
+  </section>
+
+
+<!-- Skill Section -->
+<section id="skills" class="section">
+    <div class="container">
+        <div class="section-heading text-center mb-5">
+            <h3>My Skills</h3>
+        </div>
+        <div class="row g-4">
+            {% for skill_group in skills %}
+            <div class="col-md-6">
+                <div class="feature-box d-flex flex-wrap h-100 p-4 bg-{{ loop.index }}">
+                    <h4 class="mb-4">{{ skill_group.heading }}</h4>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for skill in skill_group.name %}
+                        <div class="skill-item">
+                            {% if skill.icon %}
+                            <i class='{{ skill.icon }} me-2'></i>
+                            {% endif %}
+                            <span>{{ skill.name if skill.name else skill }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<!-- Blog Section -->
+<section id="blog" class="section bg-cream">
+    <div class="container">
+        <div class="section-heading">
+            <h3>Latest Blog Posts</h3>
+        </div>
+        <div class="blog-box">
+            <div class="row gy-4">
+                {% for post in blog_posts %}
+                <div class="col-md-4">
+                    <div class="feature-box bg-{{ loop.index }} h-100">
+                        <div class="portfolio-img mb-4">
+                            <img src="{{ url_for('static', path='images/' + post.image) }}" alt="{{ post.title }}">
+                        </div>
+                        <div class="content">
+                            <span>{{ post.date }}</span>
+                            <h5>{{ post.title }}</h5>
+                            <p>{{ post.excerpt }}</p>
+                            <a href="{{ post.link }}" class="colored-btn mt-3">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('blog') }}" class="colored-btn">View All Blog Posts</a>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="portfolio" class="section">
+    <div class="container">
+        <div class="section-heading">
+            <h3>Latest Projects</h3>
+        </div>
+        <div class="portfolio-box">
+            {% if projects %}
+                {% for project in projects %}
+                    <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around align-items-center {% if loop.index is even %}flex-row-reverse{% endif %}">
+                        <div class="col-md-6 col-lg-5">
+                            <div class="portfolio-img">
+                                <img src="{{ url_for('static', path='images/' + project.image) }}" alt="{{ project.title }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5">
+                            <div class="portfolio-text">
+                                <span>{{ project.category }}</span>
+                                <h4>{{ project.title }}</h4>
+                                <p>{{ project.description }}</p>
+                                <a href="{{ project.demo_link }}" class="colored-btn mt-1">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No projects available.</p>
+            {% endif %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="{{ url_for('projects') }}" class="colored-btn">Explore All Projects</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonial Section   id="testimonials"   text-center mb-5-->
+<section  class="section bg-cream">
+    <div class="container">
+        <div class="section-heading ">
+            <h3>Client Testimonials</h3>
+        </div>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for testimonial in testimonials %}
+                <div class="carousel-item {% if loop.first %}active{% endif %}" data-bs-interval="3000">
+                    <div class="feature-box mb-4">
+                        <div class="img animated zoomIn" style="animation-delay: 1s;">
+                            <img src="{{ request.url_for('static', path='images/' + testimonial.image) }}" alt="{{ testimonial.name }}">
+                        </div>
+                        <div class="content animated zoomIn" style="animation-delay: 1s;">
+                            <p class="mb-3">"{{ testimonial.text }}"</p>
+                            <h6 class="mb-0 text-dark fw-semibold">{{ testimonial.name }}</h6>
+                            <small>{{ testimonial.position }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button> -->
+            <div class="carousel-indicators">
+                {% for _ in testimonials %}
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="{{ loop.index0 }}" {% if loop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Contact Section -->
+ <section id="contact" class="section bg-dark">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-6">
+                <div class="contact-form">
+                    <h2 class="text-dark">Get in touch</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <form action="#">
+                        <div class="row gy-4 gx-3">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Subject</label>
+                                    <input type="text" class="form-control" name="subject">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea name="message" rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="colored-btn" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5 ms-auto col-xl-4">
+                <div class="pb-5 d-none d-md-block">
+                    <img src="{{ request.url_for('static', path='/images/flat-illustration-customer-support.png') }}" alt="" class="w-100">
+                </div>
+                <ul class="contact-infos">
+                    <li>
+                        <div class="icon bg-1">
+                            <i class="bx bx-phone"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Phone</h5>
+                            <p>+64 203492109</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon bg-2">
+                            <i class="bx bx-envelope"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Email</h5>
+                            <p>contact@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon bg-3">
+                            <i class="bx bx-map"></i>
+                        </div>
+                        <div class="col ps-3">
+                            <h5>Address</h5>
+                            <p>01 Gray Street, Hamilton Lake <br> Hamilton, NZ 3210</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Document Ready
+    $(document).ready(function() {
+        // Typing animation
+        new Typed('#type-it', {
+            strings: ['Data Analyst', 'ML Engineer', 'AI Engineer'],
+            typeSpeed: 100,
+            loop: true
+        });
+    });
+</script>
+{% endblock %}

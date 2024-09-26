@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8">My Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="{{ request.url_for('static', path='/images/project-1.jpg') }}" alt="Project 1" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Project 1</h2>
+                    <p>A brief description of Project 1.</p>
+                    <div class="card-actions justify-end">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="{{ request.url_for('static', path='/images/project-2.jpg') }}" alt="Project 2" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Project 2</h2>
+                    <p>A brief description of Project 2.</p>
+                    <div class="card-actions justify-end">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure><img src="{{ request.url_for('static', path='/images/project-3.jpg') }}" alt="Project 3" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">Project 3</h2>
+                    <p>A brief description of Project 3.</p>
+                    <div class="card-actions justify-end">
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
