@@ -1,17 +1,17 @@
-- title: "Retail Sales Prediction"
-  description: "Developed a machine learning model to predict future sales for a major retail chain."
-  category: "Data Science"
-  image: project-1.png
-  link: "#"
+- title: "FastHTML Docs Bot"
+  description: "The FastHTML Docs Bot is a sophisticated documentation Q&A bot designed to facilitate natural language querying of FastHTML documentation with real-time responses. Leveraging state-of-the-art Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG), this bot enhances user experience by providing accurate and contextually relevant answers to documentation queries."
+  category: "LLM"
+  image: chat_ai_bot_1.svg
+  link: "https://github.com/amritpsingh/FastHTML-bot"
 
-- title: "Customer Churn Analysis"
-  description: "Created an interactive dashboard to analyze and predict customer churn for a telecom company."
-  category: "Data Science"
-  image: project-2.png
-  link: "#"
+- title: "ELT Data Engineering Project"
+  description: "The project demonstrates a robust ELT data pipeline using modern data engineering tools and practices. The pipeline extracts data from a source PostgreSQL database, loads it into a destination database, and performs transformations using dbt (data build tool). The entire process is orchestrated using Apache Airflow, with all components containerized using Docker for easy deployment and scalability."
+  category: "Data Engineering"
+  image: data_engineering_1.svg
+  link: "https://github.com/amritpsingh/elt-data-engineering-project"
 
-- title: "Customer Churn Analysis"
-  description: "Created an interactive dashboard to analyze and predict customer churn for a telecom company."
-  category: "Data Science"
-  image: project-3.png
+- title: "My Portfolio Website"
+  description: "Developed a modern, responsive portfolio website to showcase my data analytics consulting services and expertise. The project demonstrates proficiency in full-stack web development, SEO optimization, and content strategy."
+  category: "Web Development"
+  image: amrit-portfolio.jpeg
   link: "#"

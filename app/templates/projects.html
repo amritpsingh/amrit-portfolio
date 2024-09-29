@@ -3,40 +3,29 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8">My Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="{{ request.url_for('static', path='/images/project-1.jpg') }}" alt="Project 1" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Project 1</h2>
-                    <p>A brief description of Project 1.</p>
-                    <div class="card-actions justify-end">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+<section id="home" class="home-section bg-cream">
+    <div class="container">
+        <div class="section-heading">
+            <h3>Latest Projects</h3>
+        </div>
+        <div class="portfolio-box">
+            {% for project in projects %}
+            <div class="row gx-3 gy-4 pb-3 mb-5 pb-lg-3 mb-lg-3 justify-content-around align-items-center {% if loop.index is even %}flex-row-reverse{% endif %}">
+                <div class="col-md-6 col-lg-5">
+                    <div class="portfolio-img">
+                        <img src="{{ url_for('static', path='images/' + project.image) }}" alt="{{ project.title }}">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="portfolio-text">
+                        <span>{{ project.category }}</span>
+                        <h4>{{ project.title }}</h4>
+                        <p>{{ project.description }}</p>
+                        <a href="{{ project.link }}" class="colored-btn mt-1" target="_blank" rel="noopener noreferrer">Live Demo</a>
                     </div>
                 </div>
             </div>
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="{{ request.url_for('static', path='/images/project-2.jpg') }}" alt="Project 2" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Project 2</h2>
-                    <p>A brief description of Project 2.</p>
-                    <div class="card-actions justify-end">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card bg-base-100 shadow-xl">
-                <figure><img src="{{ request.url_for('static', path='/images/project-3.jpg') }}" alt="Project 3" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title">Project 3</h2>
-                    <p>A brief description of Project 3.</p>
-                    <div class="card-actions justify-end">
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
